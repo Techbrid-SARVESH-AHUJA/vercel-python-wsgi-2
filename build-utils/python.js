@@ -1,4 +1,4 @@
-const { sync: commandExists } = require('command-exists');
+var commandExists = require('command-exists');
 
 const log = require('./log');
 
@@ -15,12 +15,14 @@ async function findPythonBinary(runtime) {
   }
 
   const binaryName = runtimeBinaryMap[runtime];
-  if (commandExists(binaryName)) {
-    log.info(`Found matching python (${binaryName})`);
-    return binaryName;
+  
+  commandExists('ls', function(err, commandExists){
+    if (commandExists(binaryName)) {
+      log.info(`Found matching python (${binaryName})`);
+      return binaryName;
+    }
+    throw new Error(`Unable to find binary ${binaryName} for runtime ${runtime}`);
   }
-
-  throw new Error(`Unable to find binary ${binaryName} for runtime ${runtime}`);
 }
 
 
