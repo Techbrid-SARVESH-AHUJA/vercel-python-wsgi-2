@@ -1,9 +1,9 @@
 {
-  "name": "@ardnt/vercel-python-wsgi",
+  "name": "@Techbrid-SARVESH-AHUJA/vercel-python-wsgi",
   "version": "1.1.0",
   "description": "Python builder for WSGI applications on Vercel",
   "main": "index.js",
-  "repository": "https://github.com/ardnt/vercel-python-wsgi.git",
+  "repository": "https://github.com/Techbrid-SARVESH-AHUJA/vercel-python-wsgi.git",
   "author": "Ardent <ardnt@protonmail.com>",
   "license": "MIT",
   "private": false,
